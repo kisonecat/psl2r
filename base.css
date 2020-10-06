@@ -1,0 +1,43 @@
+* { margin:0; padding:0; } /* to remove the top and left whitespace */
+
+html, body { overflow: hidden; width:100%; height:100%; } /* just to be sure these are full screen*/
+
+canvas { display:block; } /* To remove the scrollbars */
+
+#panel {
+    position: fixed;
+    left: 2em;
+    top: 2em;
+}
+
+.matrix {
+    position: relative;
+    display: inline-block;
+    margin-left: 6pt;
+}
+
+.matrix .entry, #trace {
+    display: inline-block;
+    width: 6em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* https://stackoverflow.com/questions/11561137/html-css-for-brackets-around-mathematical-matrix-prefer-lightweight */
+.matrix:before, .matrix:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    border: 1px solid #000;
+    width: 6px;
+    height: 100%;
+}
+.matrix:before {
+    left: -6px;
+    border-right: 0;
+}
+.matrix:after {
+    right: -6px;
+    border-left: 0;
+}
